@@ -10,21 +10,21 @@ class EmployeeController extends Controller
 {
     public function showEmployees()
     {
-        $employee = Employee::all();
-        return view('index', compact('employee'));
+        $employees = Employee::all();
+        return view('index', compact('employees'));
     }
 
     // Generate PDF
     public function createPDF()
     {
         // retreive all records from db
-        $data = Employee::all();
+        $employees = Employee::all();
 
         // share data to view
-        view()->share('employee', $data);
-        $pdf = PDF::loadView('pdf_view', compact('data'));
+        view()->share('employees', $employees);
+        $pdf = PDF::loadView('pdf_view', compact('employees'));
         
         // download PDF file with download method
-        return $pdf->download('pdf_file.pdf');
+        return $pdf->download('employee_2022.pdf');
     }
 }

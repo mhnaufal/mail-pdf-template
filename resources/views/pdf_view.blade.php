@@ -6,11 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PDF Demo in Laravel 7</title>
+    <title>PDF Template</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 
 <body>
+  <h2 class="text-center mb-3">List of Employees</h2>
     <table class="table table-bordered">
         <thead>
             <tr class="table-danger">
@@ -21,12 +22,12 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($employee as $data)
+            @foreach ($employees as $employee)
                 <tr>
-                    <td>{{ $data->name }}</td>
-                    <td>{{ $data->email }}</td>
-                    <td>{{ $data->phone_number }}</td>
-                    <td>{{ $data->dob }}</td>
+                    <td>{{ $employee->name }}</td>
+                    <td>{{ $employee->email }}</td>
+                    <td>{{ $employee->phone_number }}</td>
+                    <td>{{ $employee->dob }}</td>
                 </tr>
             @endforeach
         </tbody>
